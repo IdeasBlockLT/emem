@@ -14,7 +14,8 @@ import  logging
 # Private key is not shared
 # from io_lib import io_credentials as compendium_credentials
 compendium_credentials = "keykeykeykey"
-compendium_private_key = compendium_credentials.compendium_private_key
+compendium_private_key = "keykeykeykey"
+# compendium_private_key = compendium_credentials.compendium_private_key
 
 # This is necessary for the connection to mysql to support special characters
 import sys
