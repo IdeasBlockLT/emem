@@ -290,6 +290,6 @@ if __name__ == "__main__":
 
     io_print = io_debug.io_debug(IO_DEBUG, None).io_print
 
-    database = io_mysql.io_mysql(IO_DEBUG, None, True)
+    #database = io_mysql.io_mysql(IO_DEBUG, None, True)
 
     app.run(host='0.0.0.0',port=5665)
