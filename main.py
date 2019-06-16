@@ -50,10 +50,10 @@ def home():
     return render_template('index.html')
 
 # First page, before userhome
-@app.route('/license')
-def license():
+@app.route('/program')
+def program():
 
-    return render_template('license.html')
+    return render_template('program.html')
 
 
 # About page
