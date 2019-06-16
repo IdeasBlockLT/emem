@@ -68,15 +68,19 @@ def prog():
 @app.route('/about')
 def about():
 
-    # infile = open("csv.csv")#,"r")
+    try:
+        infile = open("csv.csv")#,"r")
 
-    # table = []
+        table = []
 
-    # for line in infile:
-    #     row = line.split(";")
-    #     table.append(row)
+        for line in infile:
+            row = line.split(";")
+            table.append(row)
 
-    return render_template('program.html')#, data = table)
+        return render_template('program.html')#, data = table)
+
+    except Exception as e:
+        return e
 
 
 
