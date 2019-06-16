@@ -57,10 +57,13 @@ def program():
         infile = open("git/static/texts/emem_table.csv","r")
 
         table = []
-
+        firstline = True
         for line in infile:
-            row = line.split(";")
-            table.append(row)
+            if not firstline:
+                row = line.split(";")
+                table.append(row)
+            else:
+                firstline = False
 
         return render_template('program.html', data = table)
 
