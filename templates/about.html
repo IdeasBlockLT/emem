@@ -159,12 +159,47 @@
 
 
     <!-- <script type="text/javascript"> -->
-    <script>
+    <!-- <script>
     file = fopen(getScriptPath("../../static/texts/about.txt"), 0);
     file_length = flength(file);
     content = fread(file, file_length);
     document.getElementById("aboutText").innerText = content;
-    </script>
+    </script> -->
+
+    <script>
+
+    (function() {
+       var httpRequest;
+       //Set an event listener on your button
+       // document.getElementById("btn_change").addEventListener('click', makeRequest);
+
+       
+      httpRequest = new XMLHttpRequest();
+
+      if (!httpRequest) {
+          alert('Giving up :( Cannot create an XMLHTTP instance');
+          return false;
+      }
+
+      httpRequest.onreadystatechange = setContents;
+      //Open then send the request to your page
+      httpRequest.open('GET', "../../static/texts/about.txt");
+      httpRequest.send();
+       
+
+      function setContents() {
+       if (httpRequest.readyState === XMLHttpRequest.DONE) {
+         if (httpRequest.status === 200) {
+          //Set the contents of your p tag
+           document.getElementById("aboutText").innerHTML = httpRequest.responseText;
+          } else {
+           alert('There was a problem with the request.');
+          }
+        }
+      }
+
+    })();    
+    </script> 
 
 
 
