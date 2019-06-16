@@ -68,13 +68,13 @@ def prog():
 @app.route('/about')
 def about():
 
-    # infile = open("static/texts/emem_table.csv","r")
+    infile = open("static/texts/emem_table.csv","r")
 
-    # table = []
+    table = []
 
-    # for line in infile:
-    #     row = line.split(";")
-    #     table.append(row)
+    for line in infile:
+        row = line.split(";")
+        table.append(row)
 
     return render_template('program.html')
 
