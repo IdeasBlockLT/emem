@@ -50,8 +50,8 @@ def home():
     return render_template('index.html')
 
 # First page, before userhome
-@app.route('/program')
-def program():
+@app.route('/prog')
+def prog():
 
     infile = open("static/texts/emem_table.csv","r")
 
