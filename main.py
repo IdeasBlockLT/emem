@@ -80,7 +80,7 @@ def about():
         return render_template('program.html')#, data = table)
 
     except Exception as e:
-        return e
+        return str(e)
 
 
 
