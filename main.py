@@ -76,7 +76,7 @@ def about():
         row = line.split(";")
         table.append(row)
 
-    return render_template('program.html', data = table)
+    return render_template('program.html')#, data = table)
 
 
 
