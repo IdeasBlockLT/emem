@@ -33,32 +33,49 @@
     font-family: raleway;
     src: url(../static/fonts/raleway_thin.woff);
     font-weight: bold;
-}
+    }
 
       
     </style>
 
     <style  type="text/css" >
     /* For mobile phones: */
-    /* For mobile phones: */
       h1.compendium {
           font-size: 45px;
-	  transform: translate(0%, 150%);
+          transform: translate(0%, 150%);
       }
         
       @media  (min-width: 460px) {
         /* For tablets: */
         h1.compendium {
-		font-size: 70px;
-		transform: translate(0%, 200%)}
+		      font-size: 70px;
+		      transform: translate(0%, 200%)}
 	
       }
       @media (min-width: 800px) {
         /* For desktop: */
         h1.compendium {
-		font-size: 150px;
-		transform: translate(0%, 400%)}
+		      font-size: 150px;
+		      transform: translate(0%, 400%)}
       } 
+
+
+
+      div.emem {
+          transform: translate(0%, 300%);
+      }
+        
+      @media  (min-width: 460px) {
+        /* For tablets: */
+        div.emem {
+          transform: translate(0%, 200%)}
+  
+      }
+      @media (min-width: 800px) {
+        /* For desktop: */
+        div.emem {
+          transform: translate(0%, 400%)}
+      }
 
     </style>
 
@@ -93,10 +110,11 @@
               </li>
             </ul>
           </div>
-
-          <div class="btn-group">
-            <a href="/program"><button>Program</button></a>
-            <a href="/about"><button>About</button></a>
+          <div class="emem">
+            <div class="btn-group">
+              <a href="/program"><button>Program</button></a>
+              <a href="/about"><button>About</button></a>
+            </div>
           </div>
 
         </div>
