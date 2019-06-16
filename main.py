@@ -68,7 +68,15 @@ def prog():
 @app.route('/about')
 def about():
 
-    return render_template('about.html')
+    infile = open("static/texts/emem_table.csv","r")
+
+    table = []
+
+    for line in infile:
+        row = line.split(";")
+        table.append(row)
+        
+    return render_template('program.html')
 
 
 
