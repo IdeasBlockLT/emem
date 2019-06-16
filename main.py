@@ -69,7 +69,7 @@ def prog():
 def about():
 
     try:
-        infile = open("csv.csv")#,"r")
+        infile = open('csv.csv')#,"r")
 
         table = []
 
