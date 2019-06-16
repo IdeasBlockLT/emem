@@ -50,26 +50,11 @@ def home():
     return render_template('index.html')
 
 # First page, before userhome
-@app.route('/prog')
-def prog():
-
-    infile = open("static/texts/emem_table.csv","r")
-
-    table = []
-
-    for line in infile:
-        row = line.split(";")
-        table.append(row)
-
-    return render_template('program.html')#, data = table)
-
-
-# About page
-@app.route('/about')
-def about():
+@app.route('/program')
+def program():
 
     try:
-        infile = open("git/csv.csv")#,"r")
+        infile = open("/git/static/texts/emem_table.csv","r")
 
         table = []
 
@@ -77,7 +62,18 @@ def about():
             row = line.split(";")
             table.append(row)
 
-        return render_template('program.html')#, data = table)
+        return render_template('program.html', data = table)
+
+    except Exception as e:
+        return str(e)
+
+
+# About page
+@app.route('/about')
+def about():
+
+    try:
+        return render_template('about.html')
 
     except Exception as e:
         return str(e)
