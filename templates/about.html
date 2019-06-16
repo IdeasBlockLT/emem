@@ -117,7 +117,10 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit" style="opacity: 0.8  ; background-color: rgb(0,0,0,0.8); box-shadow: 0 0 30px gray">
         
-        <h3 class="row title" style='color:white; font-family:"raleway";'><object data="../../static/texts/about.txt"></object></h3>
+        <div id="aboutText">
+        <!-- <h3 class="row title" style='color:white; font-family:"raleway";'><object data="../../static/texts/about.txt"></object></h3> -->
+        <h3 class="row title" style='color:white; font-family:"raleway";'></h3>
+        </div>
         <!-- <p><a class="btn btn-primary btn-large" href="/showSignUp"style='font-size: 15px'>Register!</a></p> -->
       </div>
     </div>
@@ -153,6 +156,17 @@
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+
+    <script type="text/javascript">
+    file = fopen(getScriptPath("../../static/texts/about.txt"), 0);.
+    file_length = flength(file);.
+    content = fread(file, file_length);.
+    document.getElementById("aboutText").innerText = content;.  
+    </script>
+
+
+
   </body>
 </html>
 </html>
