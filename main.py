@@ -68,7 +68,7 @@ def prog():
 @app.route('/about')
 def about():
 
-    infile = open("csv.csv")#,"r")
+    # infile = open("csv.csv")#,"r")
 
     # table = []
 
