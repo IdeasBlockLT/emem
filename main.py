@@ -69,7 +69,7 @@ def program():
                 firstline = False
                 headers.append(row)
 
-        print headers
+        # print headers
         return render_template('program.html', headers = headers, data = table)
 
     except Exception as e:
