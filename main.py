@@ -67,7 +67,7 @@ def program():
             else:
                 row = line.split(";")
                 firstline = False
-                headers.append(row)
+                # headers.append(row)
 
         # print headers
         return render_template('program.html', headers = headers, data = table)
