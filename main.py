@@ -73,8 +73,7 @@ def program():
         return render_template('program.html', headers = headers, data = table)
 
     except Exception as e:
-        return str(e) + str(headers)
-
+        return str(e) 
 
 # About page
 @app.route('/about')
