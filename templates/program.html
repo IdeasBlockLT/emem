@@ -220,9 +220,10 @@
                     <!-- <tr style="font-size: 14px;text-align:center; vertical-align:middle;"> -->
                       <tr style="font-size: 12px;text-align:left; vertical-align:middle;">
                         <!-- <tr> -->
-                      
-                        <th >HR.</th>
-                        <th >WHITE ROOM</th>
+                        {% for item in headers[0] %}
+                        <th >{{item}}</th>
+                        {% endfor %}
+                       <!--  <th >WHITE ROOM</th>
                         <th >BLUE ROOM</th> 
                         <th >RED ROOM</th>
                         <th >ORANGERIE</th>                    
@@ -232,7 +233,7 @@
                         <th >BASEMENT 3</th>
                         <th >TOP 1</th>
                         <th >TOP 2</th>
-                        <th >TOP 3</th>
+                        <th >TOP 3</th> -->
                         <!-- <th scope="col" >TOP 3</th> -->
                     </tr>
                   </thead>

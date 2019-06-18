@@ -54,18 +54,23 @@ def home():
 def program():
 
     try:
-        infile = open("git/static/texts/emem_table.csv","r")
+        # infile = open("static/texts/emem_table.csv","r")
+        infile = open("git/static/texts/artists_table.csv","r")
 
         table = []
+        headers = []
         firstline = True
         for line in infile:
             if not firstline:
                 row = line.split(";")
                 table.append(row)
             else:
+                row = line.split(";")
                 firstline = False
+                headers.append(row)
 
-        return render_template('program.html', data = table)
+        print headers
+        return render_template('program.html', headers = headers, data = table)
 
     except Exception as e:
         return str(e)
