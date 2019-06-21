@@ -56,7 +56,7 @@ def home():
 def catch_all(artistname):
 
     
-    artistname_space = artistname.replace('%20', ' ')
+    artistname_space = artistname.replace('%20', ' ').encode('utf-8')
     artistname = artistname.replace(' ', '_')
     artistname = artistname.replace('%20', '_')
 
