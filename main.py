@@ -55,7 +55,7 @@ def home():
 @app.route('/artist/<artistname>')
 def catch_all(artistname):
 
-    artistname.replace(' ', '\ ')
+    artistname.replace(' ', '_')
     return render_template('artist.html', name = artistname, description = 'soon...')
 
 
