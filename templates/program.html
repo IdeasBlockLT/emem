@@ -31,6 +31,14 @@
       padding-top: 0px;
     }
 
+    td.emem:hover .button {
+      opacity: 1;
+    }
+
+    td:hover + td {
+    color: red;   
+}
+
     .bg {
         /* The image used */
         background-image: url('../static/Uploads/emem.gif');
@@ -241,8 +249,15 @@
                     {% for row in data %}
                     <tr>
                       {% for d in row %}
-                        <td> <!--onclick="detalle(this, '{{row[0]}}', '{{row[1]}}','{{row[3]}}')">-->
+                        <td class ="emem" > <!--onclick="detalle(this, '{{row[0]}}', '{{row[1]}}','{{row[3]}}')">-->
+                          {% set list = d.split('#') %}
+                          {% if 'Artist' == list[0] %}
+                          {% set url = '/artist/' + list[1]%}
+                          <a href='{{url}}'><div style="height: 20px; text-overflow:ellipsis; overflow: hidden; white-space:nowrap; font-size: 14px;text-align:left; vertical-align:middle;">{{list[1]}} {{list[2]}}</div></a>
+                          {% else %}
                           <div style="height: 20px; text-overflow:ellipsis; overflow: hidden; white-space:nowrap; font-size: 14px;text-align:left; vertical-align:middle;">{{d}}</div>
+                          {% endif %}
+                          
                         </td>
                         
                       {% endfor %}

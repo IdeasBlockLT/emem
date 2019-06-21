@@ -49,6 +49,14 @@ def home():
 
     return render_template('index.html')
 
+
+# Artists profiles
+# @app.route('/', defaults={'path': ''})
+@app.route('/artist/<artistname>')
+def catch_all(artistname):
+    return render_template('artist.html', name = artistname, description = 'soon...')
+
+
 # First page, before userhome
 @app.route('/program')
 def program():
@@ -56,7 +64,7 @@ def program():
     try:
         # infile = open("static/texts/emem_table.csv","r")
         infile = open("git/static/texts/artists_table.csv","r")
-
+#
         table = []
         headers = []
         firstline = True

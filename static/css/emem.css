@@ -1,0 +1,81 @@
+    <style  type="text/css" >
+
+      body {
+        padding-top: 0px;
+        padding-bottom: 40px;
+      }
+
+    .bg {
+        /* The image used */
+        background-image: url('../sUploads/emem.gif');
+        opacity:0.99;
+        /* Full height */
+        height: 100%; 
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    @font-face {
+    font-family: raleway;
+    src: url(../fonts/raleway_thin.woff);
+    font-weight: bold;
+    }
+    @font-face {
+    font-family: lato;
+    src: url(../fonts/lato_thin.woff);
+    font-weight: bold;
+    }
+
+    
+    /* For mobile phones: */
+      h1.compendium {
+          font-size: 45px;
+          transform: translate(0%, 350%);
+      }
+        
+      .emem-about {
+        transform: translate(0%, -11%)
+      }
+      @media  (min-width: 460px) {
+        /* For tablets: */
+        h1.compendium {
+          font-size: 70px;
+          transform: translate(0%, 350%)}
+
+        .emem-about {
+        transform: translate(0%, -15%)
+        }
+  
+      }
+      @media (min-width: 800px) {
+        /* For desktop: */
+        h1.compendium {
+          font-size: 150px;
+          transform: translate(0%, 400%)}
+
+        .emem-about {
+        transform: translate(0%, 0%)
+        }
+      } 
+
+
+
+      div.emem {
+          transform: translate(0%, 300%);
+      }
+        
+      @media  (min-width: 460px) {
+        /* For tablets: */
+        div.emem {
+          transform: translate(0%, 200%)}
+  
+      }
+      @media (min-width: 800px) {
+        /* For desktop: */
+        div.emem {
+          transform: translate(0%, 400%)}
+      }
+
+    </style>
