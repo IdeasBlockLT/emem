@@ -61,7 +61,7 @@ def catch_all(artistname):
     artistname = artistname.replace(' ', '_')
     artistname = artistname.replace('%20', '_')
 
-    return render_template('artist.html', name = artistname, name_space = tipo, description = 'soon...')
+    return render_template('artist.html', name = artistname, name_space = artistname_space, description = 'soon...')
 
 
 # First page, before userhome
