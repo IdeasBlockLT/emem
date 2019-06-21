@@ -12,9 +12,9 @@ Robotic Folk is experimental music project exploring mechanic and organic aspect
 <a href ='https://www.roboticfolk.com'>https://www.roboticfolk.com</a>
 <br>
 <br>
-hello@roboticfolk.com
+<a href ='hello@roboticfolk.com'>hello@roboticfolk.com</a>
 <br>
 <br>
-https://www.facebook.com/pg/roboticfolk
+<a href ='https://www.facebook.com/pg/roboticfolk'>https://www.facebook.com/pg/roboticfolk</a>
 <br>
 <br>

@@ -7,7 +7,7 @@ Laser show outdoors at Trakų Vokės Manor, live collaboration with music by Rob
 <br>
 <br>
 <br>
-www.martinersted.dk
+<a href='www.martinersted.dk'>www.martinersted.dk</a>
 <br>
 <br>
-www@martinersted.dk
+<a href='www@martinersted.dk'>www@martinersted.dk</a>
