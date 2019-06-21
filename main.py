@@ -55,7 +55,9 @@ def home():
 @app.route('/artist/<artistname>')
 def catch_all(artistname):
 
-    artistname.replace(' ', '_')
+    print artistname
+    artistname = artistname.replace(' ', '_')
+    print artistname
     return render_template('artist.html', name = artistname, description = 'soon...')
 
 
@@ -65,7 +67,7 @@ def program():
 
     try:
         # infile = open("static/texts/emem_table.csv","r")
-        infile = open("git/static/texts/artists_table.csv","r")
+        infile = open("static/texts/artists_table.csv","r")
 #
         table = []
         headers = []
