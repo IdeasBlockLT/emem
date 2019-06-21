@@ -56,12 +56,12 @@ def home():
 def catch_all(artistname):
     artistname_space = artistname.replace('%20', ' ')
     tipo = type(artistname_space)
-    artistname_space = artistname_space .decode(encoding='UTF-8',errors='strict')
+    artistname_space = artistname_space .encode(encoding='UTF-8',errors='strict')
     tipo = type(artistname_space)
     artistname = artistname.replace(' ', '_')
     artistname = artistname.replace('%20', '_')
 
-    return render_template('artist.html', name = artistname, name_space = artistname_space, description = 'soon...')
+    return render_template('artist.html', name = artistname, name_space = tipo, description = 'soon...')
 
 
 # First page, before userhome
