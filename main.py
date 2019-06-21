@@ -67,7 +67,7 @@ def program():
 
     try:
         # infile = open("static/texts/emem_table.csv","r")
-        infile = open("static/texts/artists_table.csv","r")
+        infile = open("git/static/texts/artists_table.csv","r")
 #
         table = []
         headers = []
