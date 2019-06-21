@@ -54,9 +54,9 @@ def home():
 # @app.route('/', defaults={'path': ''})
 @app.route('/artist/<artistname>')
 def catch_all(artistname):
-
-    
-    artistname_space = artistname.replace('%20', ' ').decode(encoding='UTF-8',errors='strict')
+    artistname_space = artistname.replace('%20', ' ')
+    tipo = type(artistname_space)
+    # artistname_space = artistname_space .decode(encoding='UTF-8',errors='strict')
     artistname = artistname.replace(' ', '_')
     artistname = artistname.replace('%20', '_')
 
