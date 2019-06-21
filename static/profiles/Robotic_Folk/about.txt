@@ -9,7 +9,7 @@ Music outdoors at Trakų Vokės Manor.
 Robotic Folk is experimental music project exploring mechanic and organic aspects of sound phenomenon
 <br>
 <br>
-https://www.roboticfolk.com
+<a href ='https://www.roboticfolk.com'>https://www.roboticfolk.com</a>
 <br>
 <br>
 hello@roboticfolk.com
