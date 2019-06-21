@@ -54,5 +54,5 @@ With the goal to explore the unknown and transcend beyond human mind, cultural, 
 
 <br>
 <br>
-rutavm.com
-insta.com/raganos
+<a href='rutavm.com'>rutavm.com</a>
+<a href='insta.com/raganos'>insta.com/raganos</a>

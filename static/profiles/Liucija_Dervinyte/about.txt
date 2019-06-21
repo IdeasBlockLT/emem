@@ -19,9 +19,9 @@ Start the interaction.
 Liucija Dervinytė (Lithuania, 1989) is an artist, textile designer, cultural manager, and the creator of Ideacycle, a co-founder of Ideas Block creative space. She explores the subjects of sustainability and circular design, development of diverse communities and culture, universal structures and shared networks. Liucija has had an international experience as a textile designer and an artist, with design showcases, art exhibitions, installations and performances.
 <br>
 <br>
-@ideacycle
+<a href='@ideacycle'>@ideacycle</a>
 <br>
-Ideas-block.com
+<a href='Ideas-block.com>Ideas-block.com</a>
 <br>
-liucija.dervinyte@ideas-block.com
+<a href='liucija.dervinyte@ideas-block.com'>liucija.dervinyte@ideas-block.com</a>
 <br>
