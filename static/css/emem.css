@@ -5,6 +5,21 @@
         padding-bottom: 40px;
       }
 
+    body.emem{
+      margin-left: 0px;
+      padding-left: 0px;
+      padding-right:0px;
+      padding-top: 0px;
+    }
+
+    td.emem:hover .button {
+      opacity: 1;
+    }
+
+    td:hover + td {
+    color: red; 
+  }
+
     .bg {
         /* The image used */
         background-image: url('../Uploads/emem.gif');
@@ -13,9 +28,14 @@
         height: 100%; 
 
         /* Center and scale the image nicely */
-        background-position: center;
+        background-position: center ;
+        vertical-align: top;
         background-repeat: no-repeat;
         background-size: cover;
+        
+        padding-top: 0px;
+        margin-top: 0px;
+        position: relative;
     }
     @font-face {
     font-family: raleway;
@@ -61,21 +81,22 @@
       } 
 
 
-
+/*
       div.emem {
           transform: translate(0%, 300%);
       }
         
       @media  (min-width: 460px) {
-        /* For tablets: */
+        // Tablets 
         div.emem {
           transform: translate(0%, 200%)}
   
       }
+
       @media (min-width: 800px) {
-        /* For desktop: */
+        // Desktop
         div.emem {
           transform: translate(0%, 400%)}
-      }
+      }*/
 
     </style>

@@ -12,10 +12,8 @@ import  flask
 import  logging
 
 # Private key is not shared
-# from io_lib import io_credentials as compendium_credentials
 compendium_credentials = "keykeykeykey"
 compendium_private_key = "keykeykeykey"
-# compendium_private_key = compendium_credentials.compendium_private_key
 
 # This is necessary for the connection to mysql to support special characters
 import sys
@@ -29,13 +27,6 @@ app.config['UPLOAD_FOLDER'] = 'static/Uploads'
 # app.secret_key = compendium_credentials.app_secret_key
 app.secret_key = compendium_private_key
 app.debug = True
-
-# defult initialization for objects.
-# currently doing a verbose mode for unittest, will try
-# to control these from unittest later.
-# io_print = io_debug.io_debug(True, None).io_print
-# database = io_mysql.io_mysql(True, None, True)
-# database.configure_credentials('root', 'password', 'compendium')
 
 # ################################################# MAIN  ###########################
 @app.route('/')
@@ -69,7 +60,7 @@ def catch_all(artistname):
 def program():
 
     try:
-        # infile = open("static/texts/emem_table.csv","r")
+        # infile = open("git/static/texts/emem_table.csv","r")
         infile = open("git/static/texts/artists_table.csv","r")
 #
         table = []
