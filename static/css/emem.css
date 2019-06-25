@@ -56,7 +56,8 @@
       }
         
       .emem-about {
-        transform: translate(0%, -11%)
+        /*transform: translate(0%, -11%)*/
+        transform: translate(0px, -350px)
       }
       @media  (min-width: 460px) {
         /* For tablets: */
@@ -65,18 +66,18 @@
           transform: translate(0%, 350%)}
 
         .emem-about {
-        transform: translate(0%, -15%)
+        /*transform: translate(0%, -15%)*/
         }
   
       }
-      @media (min-width: 800px) {
+      @media (min-width: 1000px) {
         /* For desktop: */
         h1.compendium {
           font-size: 150px;
           transform: translate(0%, 400%)}
 
         .emem-about {
-        transform: translate(0%, 0%)
+        /*transform: translate(0%, 400%)*/
         }
       } 
 
