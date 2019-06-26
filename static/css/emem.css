@@ -76,8 +76,8 @@
           font-size: 150px;
           transform: translate(0%, 400%)}
 
-        .emem-about {
-        /*transform: translate(0%, 400%)*/
+        .emem-about-page {
+        transform: translate(0%, 0%)
         }
       } 
 
