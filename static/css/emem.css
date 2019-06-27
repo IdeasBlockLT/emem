@@ -55,10 +55,15 @@
           transform: translate(0%, 350%);
       }
         
-      .emem-about {
+      .emem-about{
         /*transform: translate(0%, -11%)*/
         transform: translate(0px, -350px)
       }
+      .emem-about-page{
+        /*transform: translate(0%, -11%)*/
+        transform: translate(0px, -350px)
+      }
+
       @media  (min-width: 460px) {
         /* For tablets: */
         h1.compendium {

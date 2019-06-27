@@ -47,7 +47,7 @@ def main():
                 row = line.split(";")
                 firstline = False
                 headers.append(row)
-        print table
+        
         return render_template('index.html', data = table)
 
     except Exception as e:
