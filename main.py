@@ -31,7 +31,29 @@ app.debug = True
 # ################################################# MAIN  ###########################
 @app.route('/')
 def main():
-    return render_template('index.html')
+
+    try:
+        # infile = open("git/static/texts/emem_table.csv","r")
+        infile    = open("git/static/texts/artists_table.csv","r")
+#
+        table     = []
+        headers   = []
+        firstline = True
+        for line in infile:
+            if not firstline:
+                row = line.split(";")
+                table.append(row)
+            else:
+                row = line.split(";")
+                firstline = False
+                headers.append(row)
+        print table
+        return render_template('index.html', data = table)
+
+    except Exception as e:
+        return str(e) 
+
+    
 # ################################################# MAIN  ###########################
 
 # First page, before userhome

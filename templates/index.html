@@ -10,6 +10,7 @@
     <!-- Le styles -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet">
     <link href="../static/css/emem.css" rel="stylesheet">
+    <link href="../static/css/slideshow.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
 
 
@@ -30,11 +31,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button> -->
-          <h1 href="/" class="compendium"  style=" position: relative;
+          <a href='/'><h1 href="/" class="compendium"  style=" position: relative;
                                             
                                             font-weight: lighter; 
                                             color:lightgray; 
-                                            font-family:'raleway',sans-serif;" >EmEm ART</h1>
+                                            font-family:'raleway',sans-serif;" >EmEm ART</h1></a>
 
 
 
@@ -75,7 +76,55 @@
                                       font-family:"raleway",sans-serif; '>Art Festival</h1>
         <a href='https://www.tvds.lt/'><h3 class="row title" style='color:white; font-family:"lato";'>Trakų Vokės dvaro sodyba</a> 6th July </h3>
 
-        <img src="../static/Uploads/manor.png">
+        <!-- <img src="../static/Uploads/manor.png"> -->
+        <!-- ===================== SLIDESHOW  ======================= -->
+        
+        
+
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="../static/Uploads/manor.png" style="width:100%">
+          <div class="text">Trakų Vokės dvaro sodyba</div>
+        </div>
+
+        {% for row in data %}
+          {% for item in row %}
+            {% set list = item.split('#') %}
+            {% if 'Artist' == list[0] %}
+              {% set name = list[1]|replace(" ", "_") %}
+              {% set url = '../static/profiles/{{name}}/photo.png' + list[1]%}
+              <div class="mySlides fade">
+                <a href='/artist/{{list[1]}}'>
+                  <img src="../static/profiles/{{name}}/photo.png" style="width:100%">
+                </a>
+                <div class="text">{{list[1]}}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+<!--         <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img_mountains_wide.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div> -->
+
+        </div>
+        <br>
+
+        <div style="text-align:center visibility=hidden">
+          <span class="dot" style="visibility: hidden;"></span> 
+        {% for row in data %}
+          {% for item in row %}
+            {% set list = item.split('#') %}
+            {% if 'Artist' == list[0] %}
+              <span class="dot" style="visibility: hidden;"></span> 
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        </div>
+        <!-- ===================== /SLIDESHOW  ======================= -->
         <!-- <p><a class="btn btn-primary btn-large" href="/showSignUp"style='font-size: 15px'>Register!</a></p> -->
       </div>
     </div>
@@ -117,7 +166,36 @@
 
     <script src="../static/content/bootstrap/jquery-3.3.1.min.js"></script>
     
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    <!-- <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script> -->
+
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+      }
+    </script>
+    
+    <script type="text/javascript">
+      console.log("Ideas Block 2019. yo!");
+    </script> 
+
+
   </body>
 </html>
 </html>
