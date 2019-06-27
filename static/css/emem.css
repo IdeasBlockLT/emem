@@ -64,6 +64,12 @@
         transform: translate(0px, -350px)
       }
 
+      .program-emem{
+          /*padding-top: 17%;*/
+          margin-left: 5%;
+          margin-right:5%;
+      }
+
       @media  (min-width: 460px) {
         /* For tablets: */
         h1.compendium {
@@ -73,6 +79,13 @@
         .emem-about {
         /*transform: translate(0%, -15%)*/
         }
+
+        .program-emem{
+          /*padding-top: 17%;*/
+          padding-top: 15%;
+          transform: translate(0%, 0%);
+          opacity:200;
+          }
   
       }
       @media (min-width: 1000px) {
@@ -84,7 +97,19 @@
         .emem-about-page {
         transform: translate(0%, 0%)
         }
+
+        .program-emem{
+          /*padding-top: 17%;*/
+            /*margin-top: 55px;*/
+            transform: translate(0%, 45%);
+            opacity:200;
+          }
       } 
+
+      .dataTables_scroll{
+          overflow:auto;
+          position:relative;
+      }
 
 
 /*
