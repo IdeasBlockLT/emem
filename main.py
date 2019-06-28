@@ -34,7 +34,7 @@ def main():
 
     try:
         # infile = open("git/static/texts/emem_table.csv","r")
-        infile    = open("git/static/texts/artists_table.csv","r")
+        infile    = open("static/texts/artists_table.csv","r")
 #
         table     = []
         headers   = []
@@ -83,7 +83,7 @@ def program():
 
     try:
         # infile = open("git/static/texts/emem_table.csv","r")
-        infile = open("git/static/texts/artists_table.csv","r")
+        infile = open("static/texts/artists_table.csv","r")
 #
         table = []
         headers = []

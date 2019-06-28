@@ -48,6 +48,10 @@
     font-weight: bold;
     }
 
+    .emem-map {
+      width: 100%;
+    }
+
     
     /* For mobile phones: */
       h1.compendium {
@@ -101,9 +105,13 @@
         .program-emem{
           /*padding-top: 17%;*/
             /*margin-top: 55px;*/
-            transform: translate(0%, 45%);
+            transform: translate(0%,80px);
             opacity:200;
           }
+
+        .emem-map {
+          width: 80%;
+        }
       } 
 
       .dataTables_scroll{
@@ -111,6 +119,20 @@
           position:relative;
       }
 
+
+      .td-emem { 
+        white-space:pre
+         }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table td {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
 
 /*
       div.emem {
