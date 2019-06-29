@@ -56,7 +56,85 @@
                   padding-top: -0px; 
                   margin-bottom: 0px; 
                   padding-bottom: 0px "> -->
-      <div class ="containter program-emem">
+      <div class ="containter program-emem" align="center" >
+      <div  class="hero-unit hero-timetable" 
+
+            align="center " 
+            style=" padding-top: 0%;  
+                    padding-left: 5%;
+                    padding-right: 5%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    box-shadow: 0 0 30px ;  ">
+
+        <br>
+        <h3 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>Program 6th July</h3>
+        <!-- <h10 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>(scroll right...)</h10> -->
+
+ <!-- ====================================== TABLE ================================= -->
+                  <table  id="timetable" 
+                          class="table table-striped table-inversee table-hover" 
+                          style=" margin-left:10px ;
+                                  margin-right:10px;
+                                  width:80% 
+                                  padding-left:0px 
+                                  padding-top:0px; 
+                                  margin-top: 0px;">
+                  <thead>
+
+                      <tr style=" font-size: 12px;
+                                  text-align:left; 
+                                  vertical-align:middle;">
+                        {% for item in headers_timetable[0] %}
+                        <th >{{item}}</th>
+                        {% endfor %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in timetable %}
+                    <tr >
+                      {% for d in row %}
+                        <td class ="emem" > 
+                          {% set list = d.split('#') %}
+                          {% if 'Artist' == list[0] %}
+                          {% set url = '/artist/' + list[2]%}
+                          <a href='{{url}}'><div style="height:100%;
+                                                        width:100% 
+                                                        text-overflow:ellipsis; 
+                                                        overflow: hidden; 
+                                                        white-space:nowrap; 
+                                                        font-size: 14px;
+                                                        text-align:left; 
+                                                        vertical-align:middle;">{{list[1]}} <br/> {{list[2]}} {{list[3]}}</div></a>
+                          {% else %}
+                          <div style="height: 100%; 
+                                      text-overflow:ellipsis; 
+                                      overflow: hidden; 
+                                      white-space:nowrap; 
+                                      font-size: 14px;
+                                      text-align:left; 
+                                      vertical-align:middle;">{{list[1]}} <br/> {{list[2]}}</div>
+                          {% endif %}
+                          
+                        </td>
+                        
+                      {% endfor %}
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+     
+           <!-- </div> -->
+  <!-- ====================================== /TABLE ================================= -->
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class ="containter program-emem2">
       <div  class="hero-unit" 
 
             align="center" 
@@ -68,9 +146,10 @@
                     box-shadow: 0 0 30px ;  
                     width: 80%;">
 
-        <h3 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>Program 6th July</h3>
-        <h10 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>(scroll right...)</h10>
-
+                    <br>
+                    <h3 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>Artists</h3>
+                    <h10 id="aboutText" class="row title" style='color:darkgray; font-family:"lato";'>(scroll right...)</h10>
+  
           <!-- ====================================== TABLE ================================= -->
                   <table  id="program_Table" 
                           class="table table-striped table-inversee table-hover" 
@@ -97,7 +176,7 @@
                         <td class ="emem" > 
                           {% set list = d.split('#') %}
                           {% if 'Artist' == list[0] %}
-                          {% set url = '/artist/' + list[1]%}
+                          {% set url = '/artist/' + list[2]%}
                           <a href='{{url}}'><div style="height:100%;
                                                         width:100% 
                                                         text-overflow:ellipsis; 
@@ -105,15 +184,15 @@
                                                         white-space:nowrap; 
                                                         font-size: 14px;
                                                         text-align:left; 
-                                                        vertical-align:middle;">{{list[1]}}<br/> {{list[2]}}</div></a>
+                                                        vertical-align:middle;">{{list[1]}} <br/> {{list[2]}} {{list[3]}}</div></a>
                           {% else %}
-                          <div style="height: 20px; 
+                          <div style="height: 100%; 
                                       text-overflow:ellipsis; 
                                       overflow: hidden; 
                                       white-space:nowrap; 
                                       font-size: 14px;
                                       text-align:left; 
-                                      vertical-align:middle;">{{d}}</div>
+                                      vertical-align:middle;">{{list[1]}} <br/> {{list[2]}}</div>
                           {% endif %}
                           
                         </td>
@@ -125,7 +204,8 @@
                 </table>
      
            <!-- </div> -->
-  <!-- ====================================== /TABLE ================================= -->
+  <!-- ====================================== /TABLE ================================= --><br>
+ 
       
 
    </div>
@@ -195,7 +275,23 @@
           info: false, 
           "bAutoWidth": false,
           "responsive": true
-    });
+        });
+
+        $('#timetable').DataTable({
+          ordering: false,
+          scrollY: false,
+          scrollX: true,
+          fixedColumns: {
+            leftColumns:1
+          },
+          fixedHeader: false,
+          autoWidth:true, 
+          searching: false, 
+          paging: false, 
+          info: false, 
+          "bAutoWidth": false,
+          "responsive": true
+        });
 
       });
     </script>

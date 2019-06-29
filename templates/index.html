@@ -88,14 +88,14 @@
           {% for item in row %}
             {% set list = item.split('#') %}
             {% if 'Artist' == list[0] %}
-              {% set name = list[1]|replace(" ", "_") %}
+              {% set name = list[2]|replace(" ", "_") %}
               {% set url = '../static/profiles/{{name}}/photo.png' + list[1]%}
               <div class="mySlides fade">
-                <a href='/artist/{{list[1]}}'>
+                <a href='/artist/{{list[2]}}'>
                   <img  src="../static/profiles/{{name}}/photo.png" 
                         style=" width:100%;">
                 </a>
-                <div class="text">{{list[1]}}</div>
+                <div class="text">{{list[2]}}</div>
               </div>
             {% endif %}
           {% endfor %}

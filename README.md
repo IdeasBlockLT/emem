@@ -1,4 +1,6 @@
-# compendium-server
+# emem art fest
 
-Compendium is a catalogue of the scene
-connect artists, musicians, alike
+EmEm is a one day art fest at
+Traku vokes dvaro sodyba, Vilnius, Lithuania. 
+6th July 
+Ideas Block, 2019

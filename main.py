@@ -34,7 +34,7 @@ def main():
 
     try:
         # infile = open("git/static/texts/emem_table.csv","r")
-        infile    = open("static/texts/artists_table.csv","r")
+        infile    = open("git/static/texts/artists_table.csv","r")
 #
         table     = []
         headers   = []
@@ -83,7 +83,7 @@ def program():
 
     try:
         # infile = open("git/static/texts/emem_table.csv","r")
-        infile = open("static/texts/artists_table.csv","r")
+        infile = open("git/static/texts/artists_table.csv","r")
 #
         table = []
         headers = []
@@ -97,8 +97,20 @@ def program():
                 firstline = False
                 headers.append(row)
 
-        # print headers
-        return render_template('program.html', headers = headers, data = table)
+        timetable_csv = open("static/texts/timetable.csv","r")
+        timetable = []
+        headers_timetable = []
+        firstline = True
+        for line in timetable_csv:
+            if not firstline:
+                row = line.split(";")
+                timetable.append(row)
+            else:
+                row = line.split(";")
+                firstline = False
+                headers_timetable.append(row)
+
+        return render_template('program.html', headers = headers, data = table, headers_timetable=headers_timetable, timetable=timetable)
 
     except Exception as e:
         return str(e) 
