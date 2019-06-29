@@ -97,7 +97,7 @@ def program():
                 firstline = False
                 headers.append(row)
 
-        timetable_csv = open("static/texts/timetable.csv","r")
+        timetable_csv = open("git/static/texts/timetable.csv","r")
         timetable = []
         headers_timetable = []
         firstline = True
