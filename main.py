@@ -15,6 +15,14 @@ import  logging
 compendium_credentials = "keykeykeykey"
 compendium_private_key = "keykeykeykey"
 
+# 
+artists_table    = "git/static/texts/artists_table.csv"
+timetable_table  = "git/static/texts/timetable.csv"
+# local
+# artists_table   = "static/texts/artists_table.csv"
+# timetable_table = "static/texts/timetable.csv"
+
+
 # This is necessary for the connection to mysql to support special characters
 import sys
 from re import search
@@ -33,8 +41,7 @@ app.debug = True
 def main():
 
     try:
-        # infile = open("git/static/texts/emem_table.csv","r")
-        infile    = open("git/static/texts/artists_table.csv","r")
+        infile    = open(artists_table,"r")
 #
         table     = []
         headers   = []
@@ -82,8 +89,7 @@ def catch_all(artistname):
 def program():
 
     try:
-        # infile = open("git/static/texts/emem_table.csv","r")
-        infile = open("git/static/texts/artists_table.csv","r")
+        infile = open(artists_table,"r")
 #
         table = []
         headers = []
@@ -97,7 +103,8 @@ def program():
                 firstline = False
                 headers.append(row)
 
-        timetable_csv = open("git/static/texts/timetable.csv","r")
+
+        timetable_csv = open(timetable_table,"r")
         timetable = []
         headers_timetable = []
         firstline = True
@@ -127,7 +134,6 @@ def about():
 
 
 
-
 # Error handling
 @app.route('/error',                methods=['GET','POST'])
 def error():
@@ -152,7 +158,5 @@ if __name__ == "__main__":
     IO_DEBUG = args.debug
 
     io_print = io_debug.io_debug(IO_DEBUG, None).io_print
-
-    # database = io_mysql.io_mysql(IO_DEBUG, None, True)
 
     app.run(host='0.0.0.0',port=5665)
