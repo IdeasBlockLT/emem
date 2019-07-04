@@ -16,6 +16,10 @@
       opacity: 1;
     }
 
+    .ib-footer{
+          width:30%;
+    }
+
 
     .bg {
         /* The image used */
@@ -116,6 +120,11 @@
         .hero-timetable{
           width:40%;
         }
+
+        .ib-footer{
+          width:10%;
+         }
+
       } 
 
       .dataTables_scroll{
