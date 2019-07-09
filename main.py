@@ -132,6 +132,11 @@ def about():
     except Exception as e:
         return str(e)
 
+# Media page
+@app.route('/media')
+def media():
+
+    return render_template('media.html')
 
 
 # Error handling
