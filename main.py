@@ -10,6 +10,7 @@ import  uuid
 import  argparse
 import  flask
 import  logging
+# import socket
 
 # Private key is not shared
 compendium_credentials = "keykeykeykey"
