@@ -89,6 +89,13 @@
           <h4 style="color:grey"> Robotic Folk music feat. Martin Ersted laser live performance</h4>
           <iframe class="emem-videos" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FideasblockLT%2Fvideos%2F2237092783052636%2F&show_text=0&width=560"  height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
+          {% for image in images %}
+          <br>
+          <img  src="{{image}}" 
+                        style=" width:100%;">
+          <br>
+          {% endfor %}
+
         </div>
       </div>
     </div>

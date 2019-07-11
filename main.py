@@ -19,9 +19,11 @@ compendium_private_key = "keykeykeykey"
 # 
 artists_table    = "git/static/texts/artists_table.csv"
 timetable_table  = "git/static/texts/timetable.csv"
+images_path      = "git/static/event_images/"
 # local
 # artists_table   = "static/texts/artists_table.csv"
 # timetable_table = "static/texts/timetable.csv"
+# images_path     = "static/event_images/"
 
 
 # This is necessary for the connection to mysql to support special characters
@@ -39,6 +41,7 @@ app.debug = True
 
 # ################################################# MAIN  ###########################
 @app.route('/')
+@app.route('/home')
 def main():
 
     try:
@@ -63,13 +66,6 @@ def main():
 
     
 # ################################################# MAIN  ###########################
-
-# First page, before userhome
-@app.route('/home')
-def home():
-
-    return render_template('index.html')
-
 
 # Artists profiles
 # @app.route('/', defaults={'path': ''})
@@ -137,7 +133,17 @@ def about():
 @app.route('/media')
 def media():
 
-    return render_template('media.html')
+    path = images_path
+
+    files = []
+    # r=root, d=directories, f = files
+    for r, d, f in os.walk(path):
+        for file in f:
+            if (('.JPG')  in file) or (('.jpg')  in file) :
+                 files.append(os.path.join(r, file))
+
+
+    return render_template('media.html', images=files)
 
 
 # Error handling
