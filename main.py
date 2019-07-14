@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from    __future__      import unicode_literals
 from    flask           import Flask, render_template, json, request, redirect, session, abort, jsonify
-# from    werkzeug        import generate_password_hash, check_password_hash
 from    io_lib          import io_debug
-# from    io_lib          import io_mysql
 import  os
 import  re
 import  uuid
@@ -23,7 +21,7 @@ images_path      = "git/static/event_images/"
 # local
 # artists_table   = "static/texts/artists_table.csv"
 # timetable_table = "static/texts/timetable.csv"
-# images_path     = "static/event_images/"
+# images_path     = "static/javy/"
 
 
 # This is necessary for the connection to mysql to support special characters
@@ -150,6 +148,36 @@ def media():
 @app.route('/error',                methods=['GET','POST'])
 def error():
     return render_template('error.html', error = 'TEST ERROR', goTo = "/")
+
+
+
+
+# About page
+@app.route('/test')
+def test():
+
+    try:
+
+        path = images_path
+
+        files = []
+        # r=root, d=directories, f = files
+        for r, d, f in os.walk(path):
+            for file in f:
+                if (('.JPG')  in file) or (('.jpg')  in file) :
+                     files.append(os.path.join(r, file))
+
+        print files
+        print 'lalala'
+        print files[0]
+        return render_template('test.html', images=files, image1=files[0])
+
+    except Exception as e:
+        return str(e)
+
+def debug(text):
+  print text
+  return ''
 
 
 # Start:

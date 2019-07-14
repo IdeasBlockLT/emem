@@ -12,10 +12,10 @@
     <!-- Le styles -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet">
     <link href="../static/css/emem.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
-
     <link href="../static/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="../static/css/button_group.css" rel="stylesheet">
+    <link href="../static/css/slideshow_media.css" rel="stylesheet">
+
 
   </head>
 
@@ -33,7 +33,7 @@
                     opacity: 0.8 ;">
 
 
-          <div class=" container" >
+          <div class=" container">
             <a href='/'><h1 href="/" 
                 class= "compendium"  
                 style= "position: relative;
@@ -65,7 +65,7 @@
                     box-shadow: 0 0 30px gray;
                     padding: 4%;">
         
-        <div >  
+        <div  id="videos">  
           <h4 style="color:grey"> Melanie Riccardi (Genoa, Italy): In Limine </h4>
           <iframe  class="emem-videos" height="315" src="https://www.youtube.com/embed/52ywMIi4mio" frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -89,14 +89,51 @@
           <h4 style="color:grey"> Robotic Folk music feat. Martin Ersted laser live performance</h4>
           <iframe class="emem-videos" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FideasblockLT%2Fvideos%2F2237092783052636%2F&show_text=0&width=560"  height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
-          {% for image in images %}
-          <br>
-          <img  src="{{image}}" 
-                        style=" width:100%;">
-          <br>
-          {% endfor %}
-
         </div>
+
+
+
+
+          <!-- ============= GALLERY.===================== -->
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h2 style=" text-align:center; 
+            color: grey
+            font-weight: lighter; 
+            color:white; 
+            font-family:'raleway',sans-serif;">EmEm Performances Gallery</h2>
+
+          <div class="container" style="width:100%;" align="center" >
+            {% for image in images %}
+            <div class="mySlides" style="position:relative; align-items: center;" align="center">
+                <img a src="../{{image}}" style="width:auto; max-height: 700px"/>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides( 1)" >❯</a> 
+            </div>
+            {% endfor %}
+
+            <div class="row emem_flex" style="width: 80%">
+              {% for image in images %}
+              <div class="column">
+                <img class="demo cursor" src="../{{image}}" style="width:100%" onclick="currentSlide({{loop.index}})" >
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+          <p style=" 
+            color: grey
+            font-weight: lighter; 
+            color:white; 
+            font-family:'raleway',sans-serif;">Photos by Javy Underground Photography</p>
+          <!-- ============= GALLERY.===================== -->
+
       </div>
     </div>
 
@@ -114,8 +151,6 @@
     </footer>
 
     </div>
-
-
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../../static/assets/js/jquery.js"></script>
@@ -138,47 +173,50 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
     <script src="../static/content/bootstrap/jquery-3.3.1.min.js"></script>
-    
-    <!-- <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script> -->
-
 
 
     <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-    (function() {
-      var httpRequest;
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
 
-      httpRequest = new XMLHttpRequest();
+    function currentSlide(n) {
+      console.log("currentSlide");
+      console.log(n);
 
-      if (!httpRequest) {
-          alert('Giving up :( Cannot create an XMLHTTP instance');
-          return false;
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+
+      var dots = document.getElementsByClassName  ("demo");
+
+      var captionText = document.getElementById("caption");
+
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
       }
-
-      httpRequest.onreadystatechange = setContents;
-      //Open then send the request to your page
-      httpRequest.open('GET', "../../static/texts/about.txt");
-      httpRequest.send();
-       
-
-      function setContents() {
-       if (httpRequest.readyState === XMLHttpRequest.DONE) {
-         if (httpRequest.status === 200) {
-          //Set the contents of your p tag
-           document.getElementById("aboutText").innerHTML = httpRequest.responseText;
-          } else {
-           alert('There was a problem with the request.');
-          }
-        }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
       }
-
-    })();    
-    </script> 
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
 
 
     <script type="text/javascript">
       console.log("Ideas Block 2019. yo!");
     </script>
+
 
   </body>
 </html>
