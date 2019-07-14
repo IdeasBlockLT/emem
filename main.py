@@ -14,10 +14,10 @@ import  logging
 compendium_credentials = "keykeykeykey"
 compendium_private_key = "keykeykeykey"
 
-# 
+# server
 artists_table    = "git/static/texts/artists_table.csv"
 timetable_table  = "git/static/texts/timetable.csv"
-images_path      = "git/static/event_images/"
+images_path      = "git/static/javy/"
 # local
 # artists_table   = "static/texts/artists_table.csv"
 # timetable_table = "static/texts/timetable.csv"
