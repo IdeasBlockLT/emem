@@ -23,6 +23,8 @@ images_path      = "git/static/javy/"
 # timetable_table = "static/texts/timetable.csv"
 # images_path     = "static/javy/"
 
+images_html_path = "static/javy"
+
 
 # This is necessary for the connection to mysql to support special characters
 import sys
@@ -138,7 +140,8 @@ def media():
     for r, d, f in os.walk(path):
         for file in f:
             if (('.JPG')  in file) or (('.jpg')  in file) :
-                 files.append(os.path.join(r, file))
+                 # files.append(os.path.join(r, file))
+                 files.append(os.path.join(images_html_path,file))
 
 
     return render_template('media.html', images=files)
